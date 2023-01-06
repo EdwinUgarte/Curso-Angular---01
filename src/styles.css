@@ -39,3 +39,14 @@
   .p-1 {
     padding: 1px;
   }
+
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+ input{
+  display: block;
+  margin: 5px;
+ }
