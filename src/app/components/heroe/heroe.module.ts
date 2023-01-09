@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
     ],
     exports: [
         ListadoComponent
+
     ],
     imports: [
         CommonModule // Sirve y se tiene que importar para poder usar directivas ngFor, ngIf, ng-Template, etc... es muy importante

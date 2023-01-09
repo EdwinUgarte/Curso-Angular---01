@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-agregar',
@@ -14,15 +15,18 @@ export class AgregarComponent {
     poder: 0
   }
 
-  @Output()
-  newCharacter: EventEmitter<Personaje> = new EventEmitter<Personaje>();
+  // @Output()
+  // newCharacter: EventEmitter<Personaje> = new EventEmitter<Personaje>();
 
+  constructor(private dbService: DbzService){}
   
   agregar(){
     if(this.nuevo.nombre.trim().length === 0){return alert("No puedes agregar personajes sin nombre")}
-    console.log(this.nuevo);
+    
+    // this.newCharacter.emit(this.nuevo);
+    
+    this.dbService.agregarPersonaje(this.nuevo);
 
-    this.newCharacter.emit(this.nuevo);
   
     this.nuevo = {
       nombre: "",

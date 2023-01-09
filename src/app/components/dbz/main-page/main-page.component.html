@@ -5,12 +5,12 @@
 <div class="row">
     <div>
 
-        <app-personajes [personajes]="personajes"></app-personajes>
+        <app-personajes></app-personajes>
 
     </div>
     <div>
-
-      <app-agregar  [nuevo]="nuevo" (newCharacter)="agregarNuevo($event)"></app-agregar>
+    <!-- Asi se hace la inyeccion y recepcion de propiedades, en el caso del evento es forzoso que se coloque $event como argumento ya que estamos recibiendo un evento -->
+      <app-agregar  [nuevo]="nuevo" ></app-agregar>
     
     </div>
 </div>
